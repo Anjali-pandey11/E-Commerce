@@ -19,10 +19,8 @@ const  setupPage = () => {
 
   return(
   <div className="p-4">
-   RootPage
-    
+    RootPage
   </div>
   )
 }
-
 export default setupPage;
