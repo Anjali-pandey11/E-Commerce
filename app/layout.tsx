@@ -4,6 +4,9 @@ import "./globals.css";
 
 import {ClerkProvider} from '@clerk/nextjs'
 
+import { Modalprovider } from "./providers/modal-provider";
+
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,11 +33,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Modalprovider/>
         {children}
       </body>
        
     </html>
-
-        </ClerkProvider>
+      </ClerkProvider>
   );
 }
