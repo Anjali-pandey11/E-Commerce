@@ -5,6 +5,8 @@ import "./globals.css";
 import {ClerkProvider} from '@clerk/nextjs'
 
 import { Modalprovider } from "./providers/modal-provider";
+import { ToasterProvider } from "./providers/toast-provider";
+
 
 
 const geistSans = Geist({
@@ -27,12 +29,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  
+  
+
   return (
   <ClerkProvider>
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ToasterProvider/>
         <Modalprovider/>
         {children}
       </body>
