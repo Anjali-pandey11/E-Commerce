@@ -43,11 +43,14 @@ export const StoreModal = () => {
     try{
        setLoading(true);
 
-       throw new Error("X");
+       
 
        const response = await axios.post('/api/stores',values);
 
        toast.success("Store created")
+
+       // why we use this because ye ek complete refresh on our page, deta hai instaed of using next/navigation
+       window.location.assign(`${response.data.id}`)
 
     }catch(error){
       toast.error("Something went wrong");
